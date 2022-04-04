@@ -1,15 +1,16 @@
-﻿using CoreAngEcom.Application.Abstractions;
-using CoreAngEcom.Persistence.Concretes;
+﻿using CoreAngEcom.Persistence.Contexts;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CoreAngEcom.Persistence
 {
     public static class ServiceRegistration
-	{
-		public static void AddPersistenceServices(this IServiceCollection services)
+    {
+        public static void AddPersistenceServices(this IServiceCollection services)
         {
-            services.AddSingleton<IProductService, ProductService>();
+            services.AddDbContext<CoreAngEcomDbContext>
+                (options => options.UseNpgsql(Configuration.ConnectionString));
         }
-	}
+    }
 }
 
