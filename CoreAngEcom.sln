@@ -3,15 +3,60 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1700.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{E40E93E8-9CB1-403E-8F9D-AB07EDDE3BEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAngEcom.Domain", "Core\CoreAngEcom.Domain\CoreAngEcom.Domain.csproj", "{0E5C5963-7E16-46E5-A445-976C34996119}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAngEcom.Application", "Core\CoreAngEcom.Application\CoreAngEcom.Application.csproj", "{B684524C-9C3E-442E-A86F-D417D0AE5A3E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{2EB334F1-B342-44D2-B4A0-9EB96A81EAAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAngEcom.Infrastructure", "Infrastructure\CoreAngEcom.Infrastructure\CoreAngEcom.Infrastructure.csproj", "{F95FD77A-DC01-4FC1-AE64-3C446A671B18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAngEcom.Persistence", "Infrastructure\CoreAngEcom.Persistence\CoreAngEcom.Persistence.csproj", "{8BC8EE90-EEED-4FD6-9CCB-41A432D42DA9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{E04EFEB9-A2F5-41D2-85AE-C31B88337DB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAngEcom.Api", "Presentation\CoreAngEcom.Api\CoreAngEcom.Api.csproj", "{16F8D609-E006-40B4-B57F-ACF9D45CE2C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E5C5963-7E16-46E5-A445-976C34996119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E5C5963-7E16-46E5-A445-976C34996119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E5C5963-7E16-46E5-A445-976C34996119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E5C5963-7E16-46E5-A445-976C34996119}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B684524C-9C3E-442E-A86F-D417D0AE5A3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B684524C-9C3E-442E-A86F-D417D0AE5A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B684524C-9C3E-442E-A86F-D417D0AE5A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B684524C-9C3E-442E-A86F-D417D0AE5A3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F95FD77A-DC01-4FC1-AE64-3C446A671B18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F95FD77A-DC01-4FC1-AE64-3C446A671B18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F95FD77A-DC01-4FC1-AE64-3C446A671B18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F95FD77A-DC01-4FC1-AE64-3C446A671B18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BC8EE90-EEED-4FD6-9CCB-41A432D42DA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BC8EE90-EEED-4FD6-9CCB-41A432D42DA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BC8EE90-EEED-4FD6-9CCB-41A432D42DA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BC8EE90-EEED-4FD6-9CCB-41A432D42DA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16F8D609-E006-40B4-B57F-ACF9D45CE2C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16F8D609-E006-40B4-B57F-ACF9D45CE2C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16F8D609-E006-40B4-B57F-ACF9D45CE2C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16F8D609-E006-40B4-B57F-ACF9D45CE2C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B41610D0-ED3C-4A87-8D23-0FB68CDF9213}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0E5C5963-7E16-46E5-A445-976C34996119} = {E40E93E8-9CB1-403E-8F9D-AB07EDDE3BEB}
+		{B684524C-9C3E-442E-A86F-D417D0AE5A3E} = {E40E93E8-9CB1-403E-8F9D-AB07EDDE3BEB}
+		{F95FD77A-DC01-4FC1-AE64-3C446A671B18} = {2EB334F1-B342-44D2-B4A0-9EB96A81EAAC}
+		{8BC8EE90-EEED-4FD6-9CCB-41A432D42DA9} = {2EB334F1-B342-44D2-B4A0-9EB96A81EAAC}
+		{16F8D609-E006-40B4-B57F-ACF9D45CE2C8} = {E04EFEB9-A2F5-41D2-85AE-C31B88337DB7}
 	EndGlobalSection
 EndGlobal
