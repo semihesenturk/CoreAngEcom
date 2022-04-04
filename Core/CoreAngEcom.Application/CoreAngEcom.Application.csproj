@@ -11,8 +11,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Abstractions\" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Repositories\Customer\" />
+    <None Remove="Repositories\Order\" />
+    <None Remove="Repositories\Product\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Abstractions\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Repositories\Customer\" />
+    <Folder Include="Repositories\Order\" />
+    <Folder Include="Repositories\Product\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3" />
   </ItemGroup>
 </Project>

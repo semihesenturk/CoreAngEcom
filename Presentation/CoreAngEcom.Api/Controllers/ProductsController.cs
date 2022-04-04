@@ -1,4 +1,5 @@
-﻿using CoreAngEcom.Application.Abstractions;
+﻿
+using CoreAngEcom.Application.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoreAngEcom.Api.Controllers
@@ -7,17 +8,28 @@ namespace CoreAngEcom.Api.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly IProductService _productService;
-        public ProductsController(IProductService productService)
+        private readonly IProductWriteRepository _productWriteRepository;
+        private readonly IProductReadRepository _productReadRepository;
+
+        public ProductsController(IProductWriteRepository productWriteRepository, IProductReadRepository productReadRepository)
         {
-            _productService = productService;
+            _productWriteRepository = productWriteRepository;
+            _productReadRepository = productReadRepository;
         }
 
         [HttpGet]
-        public IActionResult GetProducts()
+        public async void Get()
         {
-            return Ok(_productService.GetProducts());
+            var result = _productWriteRepository.AddRangeAsync(new()
+            {
+                new() { Id = Guid.NewGuid(), CretedDate = DateTime.UtcNow, IsActive = true, Name = "Tencere", Price = 100, Stock = 10 },
+                new() { Id = Guid.NewGuid(), CretedDate = DateTime.UtcNow, IsActive = true, Name = "Tava", Price = 200, Stock = 20 },
+                new() { Id = Guid.NewGuid(), CretedDate = DateTime.UtcNow, IsActive = true, Name = "Bardak", Price = 300, Stock = 30 }
+            });
+
+            var count = await _productWriteRepository.SaveAsync();
         }
+
     }
 }
 
