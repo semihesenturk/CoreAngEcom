@@ -16,6 +16,7 @@ namespace CoreAngEcom.Persistence.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
                     CretedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     IsActive = table.Column<bool>(type: "boolean", nullable: false)
                 },
                 constraints: table =>
@@ -30,8 +31,9 @@ namespace CoreAngEcom.Persistence.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
                     Stock = table.Column<int>(type: "integer", nullable: false),
-                    Price = table.Column<long>(type: "bigint", nullable: false),
+                    Price = table.Column<float>(type: "real", nullable: false),
                     CretedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     IsActive = table.Column<bool>(type: "boolean", nullable: false)
                 },
                 constraints: table =>
@@ -44,20 +46,20 @@ namespace CoreAngEcom.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    CustomerId = table.Column<int>(type: "integer", nullable: false),
+                    CustomerId = table.Column<Guid>(type: "uuid", nullable: false),
                     Number = table.Column<string>(type: "text", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
                     Address = table.Column<string>(type: "text", nullable: false),
-                    CustomerId1 = table.Column<Guid>(type: "uuid", nullable: false),
                     CretedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     IsActive = table.Column<bool>(type: "boolean", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Orders", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Orders_Customers_CustomerId1",
-                        column: x => x.CustomerId1,
+                        name: "FK_Orders_Customers_CustomerId",
+                        column: x => x.CustomerId,
                         principalTable: "Customers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -93,9 +95,9 @@ namespace CoreAngEcom.Persistence.Migrations
                 column: "ProductsId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_CustomerId1",
+                name: "IX_Orders_CustomerId",
                 table: "Orders",
-                column: "CustomerId1");
+                column: "CustomerId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

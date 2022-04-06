@@ -10,39 +10,33 @@ namespace CoreAngEcom.Api.Controllers
     {
         private readonly IProductWriteRepository _productWriteRepository;
         private readonly IProductReadRepository _productReadRepository;
+        private readonly IOrderWriteRepository _orderWriteRepository;
+        private readonly ICustomerWriteRepository _customerWriteRepository;
+        private readonly IOrderReadRepository _orderReadRepository;
 
-        public ProductsController(IProductWriteRepository productWriteRepository, IProductReadRepository productReadRepository)
+        public ProductsController(IProductWriteRepository productWriteRepository,
+            IProductReadRepository productReadRepository,
+            IOrderWriteRepository orderWriteRepository,
+            ICustomerWriteRepository customerWriteRepository,
+            IOrderReadRepository orderReadRepository)
         {
             _productWriteRepository = productWriteRepository;
             _productReadRepository = productReadRepository;
+            _orderWriteRepository = orderWriteRepository;
+            _customerWriteRepository = customerWriteRepository;
+            _orderReadRepository = orderReadRepository;
         }
 
         [HttpGet]
         public async Task Get()
         {
-            //var result = _productWriteRepository.AddRangeAsync(new()
-            //{
-            //    new() { Id = Guid.NewGuid(), CretedDate = DateTime.UtcNow, IsActive = true, Name = "Tencere", Price = 100, Stock = 10 },
-            //    new() { Id = Guid.NewGuid(), CretedDate = DateTime.UtcNow, IsActive = true, Name = "Tava", Price = 200, Stock = 20 },
-            //    new() { Id = Guid.NewGuid(), CretedDate = DateTime.UtcNow, IsActive = true, Name = "Bardak", Price = 300, Stock = 30 }
-            //});
 
-            //var count = await _productWriteRepository.SaveAsync();
+            var orderData =await _orderReadRepository.GetByIdAsync("60b2dcef-ae5b-4891-9320-e2d55a41dc8d");
 
-            //Product product = await _productReadRepository.GetByIdAsync("c1ebac19-ce91-438e-ae31-8ad494aa7c98");
-            //product.Name = "Bardak";
+            orderData.Description = "Degistirdim";
 
-            //await _productWriteRepository.SaveAsync();
-
+            await _orderWriteRepository.SaveAsync();
         }
-
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(string id)
-        {
-            Product product = await _productReadRepository.GetByIdAsync(id);
-            return Ok(product);
-        }
-
     }
 }
 

@@ -4,7 +4,7 @@ namespace CoreAngEcom.Domain.Entities
 {
     public class Order :BaseEntity
 	{
-        public int CustomerId { get; set; }
+        public Guid CustomerId { get; set; }
         public string Number { get; set; }
         public string Description { get; set; }
         public string Address { get; set; }
