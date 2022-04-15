@@ -6,7 +6,6 @@ Project Structure:
 -- Backend Side (CoreAngEcom.Api)
 
   - Used Technologies;
-  
     - .Net Core 6.0
     - Onion Architecture (Clean Architecture Pattern)
     - N-Tier Application
