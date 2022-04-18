@@ -26,4 +26,5 @@ Project Structure:
   - Used Technologies
     - Angular
     - Modules & Components
+    - Material
     - Multiple Layout 
