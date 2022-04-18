@@ -18,6 +18,7 @@ Project Structure:
     - Configuration Module (.Net Core 6.0)
     - IServiceCollection implementation for register classes to DI module between of layers.
     - Open Api Integration (Swagger)
+    - JWT Token Implementation
     
     
     
